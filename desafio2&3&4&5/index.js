@@ -27,7 +27,7 @@ const javineta = {
     marca: "FIAT",
     motor: {
 
-        fuerza: "160 CV",
+        fuerza: "220CV",
         nitro: "No tiene nitro",
         turbo: "No tiene turbo",
 
@@ -43,8 +43,20 @@ function Camiones (marca, color, modelo, fuerza) {
 
 }
 
-const camion2 = new Camiones ("Mack", "Blanco", "2009", "re polenta porque es Mack");
-const camion3 = new Camiones ("Autocar", "Rojo", "1988", "es el de la peli Halcon asique tiene la fuerza de Stallone");
+const camion2 = new Camiones ("Mack", "Blanco", "2009", "180CV");
+const camion3 = new Camiones ("Autocar", "Rojo", "1988", "200CV");
+
+// CREAMOS UN ARRAY PARA CONTENER LOS VALORES DE LOS CABALLOS DE FUERZA DE LOS CAMIONES
+
+const fuerzaCv = [javineta.motor.fuerza, camion2.fuerza, camion3.fuerza];
+fuerzaCv.sort();
+
+// CREAMOS UN ARRAY PARA INCLUIR LOS TIPOS DE CARGAS
+
+let cargas = ["livianas", "pesadas", "inflamables", "liquidas", "solidas", "peligrosas", "quimicas", "paletizada", "suelta"];
+
+cargas.sort();
+console.log(cargas);
 
 
 // VAMOS A INTRODUCIRLE EL SIMULADOR AL USUARIO Y DARLE LA OPCION DE ELEGIR ENTRE DISTINTAS OPCIONES
@@ -53,6 +65,8 @@ alert("En este simulador vamos a emular los viajes de Javi en su aventura como c
 console.log("autonomia" in javineta);
 alert("Por defecto vamos a iniciar el simulador con la Javineta, que tiene las siguientes caracteristicas: " + javineta.tipo + ", " + javineta.color + ", " + javineta.modelo + ", " + javineta.marca + ". Nitro: " + javineta.motor.nitro);
 
+
+alert(`Para tu informacion los caballos de fuerza de los camiones son de: ${fuerzaCv}`);
 
 let eleccion = prompt("¿Deseas probar otro camion? podes elegir entre: camion2 o camion3");
 
