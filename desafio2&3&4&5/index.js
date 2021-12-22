@@ -72,24 +72,33 @@ let eleccion = prompt("¿Deseas probar otro camion? podes elegir entre: camion2 
 
 if (eleccion == "camion2") {
     alert("Seleccionaste el camion2, tiene las siguientes caracteristicas: " + camion2.marca + ", " + camion2.color + ", " + camion2.modelo + ". Fuerza: " + camion2.fuerza);
+
+    document.getElementById("camionSeleccionado").innerHTML = "Tiene las siguientes caracteristicas: " + camion2.marca + ", " + camion2.color + ", " + camion2.modelo + ". Fuerza: " + camion2.fuerza;
+
 } else if (eleccion == "camion3") {
     alert("Seleccionaste el camion3, tiene las siguientes caracteristicas: " + camion3.marca + ", " + camion3.color + ", " + camion3.modelo + ". Fuerza: " + camion3.fuerza);
+
+    document.getElementById("camionSeleccionado").innerHTML = "Tiene las siguientes caracteristicas: " + camion3.marca + ", " + camion3.color + ", " + camion3.modelo + ". Fuerza: " + camion3.fuerza;
+
 } else {
-    alert("La javineta, la mejor eleccion.")
+    alert("La javineta, la mejor eleccion.");
+
+    document.getElementById("camionSeleccionado").innerHTML = "Tiene las siguientes caracteristicas: " + javineta.tipo + ", " + javineta.color + ", " + javineta.modelo + ", " + javineta.marca + ". Nitro: " + javineta.motor.nitro;
+
 }
 
 
 // EMPEZAMOS CALCULANDO SIMPLEMENTE DISTANCIA Y VELOCIDIAD PROMEDIO
 
-let destino = prompt("¿Cual es el destino de tu viaje");
-let distancia = parseInt(prompt("¿Cual es la distancia en KM hasta " + destino + "?"));
-let velocidad = parseInt(prompt("¿A que velocidad en KM/H, en promedio, viajas a " + destino + "?"));
+let destino = document.getElementById("destinoSeleccionado").innerHTML = prompt("¿Cual es el destino de tu viaje");
+let distancia = document.getElementById("distanciaSeleccionado").innerHTML = parseInt(prompt("¿Cual es la distancia en KM hasta " + destino + "?"));
+let velocidad = document.getElementById("velocidadSeleccionado").innerHTML = parseInt(prompt("¿A que velocidad en KM/H, en promedio, viajas a " + destino + "?"));
 
 let duracion = parseInt(distancia / velocidad + "hs.");
 
 // ACA INCLUIMOS EL FACTOR LLUVIA
 
-let lluvia = prompt("¿Esta pronosticado lluvia? si/no");
+let lluvia = document.getElementById("lluviaSeleccionado").innerHTML = prompt("¿Esta pronosticado lluvia? si/no");
 
 // ACA INCLUIMOS EL FACTOR "CARGA TRANSPORTADA (en TONELADAS)" CON UN BUCLE PARA DAR LUZ VERDE OPERATIVO A LA CARGA MAXIMA
 
@@ -147,6 +156,9 @@ if (lluvia == "si" && cargaTransportada == 25) {
     timerGps();
 }
 
+document.getElementById("duracionSeleccionado").innerHTML = duracion + " horas";
+
+
 // RECOMENDAMOS AL USUARIO (EL JAVI) QUE TENGA EN CUENTA EL CONSUMO DE COMBUSTIBLE (usamos functions):
 
 
@@ -160,8 +172,15 @@ if (temperaturaClima == "si") {
 
     alert("Tu consumo de combustible se incrementará. Hasta tu destino consumiras " + consumoAireAc() + " litros de combustible en total")
 
+    document.getElementById("consumoSeleccionado").innerHTML = consumoAireAc()  + " litros de combustible";;
+
 } else {
     alert("Si no usas el AA tu consumo de combustible sera el mismo: " + consumoCombustible(distancia,consumoLitros) + " litros de combustible en total");
+
+    document.getElementById("consumoSeleccionado").innerHTML = consumoCombustible(distancia,consumoLitros) + " litros de combustible";
 }
 
 
+// UNA VEZ CORRIDO EL PROGRAMA VAMOS AGREGAR COMENTARIO DEL USUARIO AL HTML
+
+document.getElementById("usuario").innerHTML = prompt("¿te ayudamos a definir tu ruta de viaje?");
