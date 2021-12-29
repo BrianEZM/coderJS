@@ -1,5 +1,6 @@
 // VAMOS A SIMULAR VIAJES Y SUS DURACIONES SEGUN DIFERENTES VARIABLES (distancia, velocidad, clima, pesos de carga, consumo de combustible)
 
+let reset = function(){
 
 // VAMOS A CREAR ALGUNOS OBJETOS PARA DARTE TANGIBILIDAD AL ASUNTO
 
@@ -184,3 +185,11 @@ if (temperaturaClima == "si") {
 // UNA VEZ CORRIDO EL PROGRAMA VAMOS AGREGAR COMENTARIO DEL USUARIO AL HTML
 
 document.getElementById("usuario").innerHTML = prompt("¿te ayudamos a definir tu ruta de viaje?");
+
+}
+
+let setButton = document.getElementById("setButton");
+setButton.addEventListener("click", reset);
+
+let resetButton = document.getElementById("resetButton");
+resetButton.addEventListener("click", reset);
