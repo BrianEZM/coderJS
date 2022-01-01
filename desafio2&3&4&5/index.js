@@ -25,7 +25,7 @@ const javineta = {
     tipo: "Camion",
     color: "Negro con llamas rojas",
     modelo: 2004,
-    marca: "FIAT",
+    marca: "Ford",
     motor: {
 
         fuerza: "220CV",
@@ -71,12 +71,12 @@ alert(`Para tu informacion los caballos de fuerza de los camiones son de: ${fuer
 
 let eleccion = prompt("¿Deseas probar otro camion? podes elegir entre: camion2 o camion3");
 
-if (eleccion == "camion2") {
+if (eleccion == "camion2" || eleccion == "CAMION2" || eleccion == "2") {
     alert("Seleccionaste el camion2, tiene las siguientes caracteristicas: " + camion2.marca + ", " + camion2.color + ", " + camion2.modelo + ". Fuerza: " + camion2.fuerza);
 
     document.getElementById("camionSeleccionado").innerHTML = "Tiene las siguientes caracteristicas: " + camion2.marca + ", " + camion2.color + ", " + camion2.modelo + ". Fuerza: " + camion2.fuerza;
 
-} else if (eleccion == "camion3") {
+} else if (eleccion == "camion3" || eleccion == "CAMION3" || eleccion == "3") {
     alert("Seleccionaste el camion3, tiene las siguientes caracteristicas: " + camion3.marca + ", " + camion3.color + ", " + camion3.modelo + ". Fuerza: " + camion3.fuerza);
 
     document.getElementById("camionSeleccionado").innerHTML = "Tiene las siguientes caracteristicas: " + camion3.marca + ", " + camion3.color + ", " + camion3.modelo + ". Fuerza: " + camion3.fuerza;
@@ -87,7 +87,6 @@ if (eleccion == "camion2") {
     document.getElementById("camionSeleccionado").innerHTML = "Tiene las siguientes caracteristicas: " + javineta.tipo + ", " + javineta.color + ", " + javineta.modelo + ", " + javineta.marca + ". Nitro: " + javineta.motor.nitro;
 
 }
-
 
 // EMPEZAMOS CALCULANDO SIMPLEMENTE DISTANCIA Y VELOCIDIAD PROMEDIO
 
@@ -138,9 +137,9 @@ function consumoAireAc() {
     return reservaCombustible;
 }
 
-// ACA CONSIDERAMOS AMBOS FACTORES: LLUVIA + CARGA MAXIMA OPERTAIVA TRANSPORTADA PARA TENER EN CUENTA DURACION EN ESTE ESCENARIO
+// ACA CONSIDERAMOS AMBOS FACTORES: LLUVIA + CARGA MAXIMA OPERTAIVA TRANSPORTADA PARA TENER EN CUENTA DURACION
 
-if (lluvia == "si" && cargaTransportada == 25) {
+if (lluvia == "si" || lluvia == "SI" && cargaTransportada == 25) {
         
     alert("No podes ir a la velocidad promedio, tenes que ir mas lento, tu duración de viaje es: ");
 
@@ -160,7 +159,7 @@ if (lluvia == "si" && cargaTransportada == 25) {
 document.getElementById("duracionSeleccionado").innerHTML = duracion + " horas";
 
 
-// RECOMENDAMOS AL USUARIO (EL JAVI) QUE TENGA EN CUENTA EL CONSUMO DE COMBUSTIBLE (usamos functions):
+// RECOMENDAMOS AL USUARIO QUE TENGA EN CUENTA EL CONSUMO DE COMBUSTIBLE (usamos functions):
 
 
 let consumoLitros = prompt("¿Cuantos litros de combustible consume el camion por kilometro?");
@@ -169,7 +168,7 @@ let consumoLitros = prompt("¿Cuantos litros de combustible consume el camion po
 
 let temperaturaClima = prompt("¿Usas el aire acondicionado durante este viaje a " + destino + "?");
 
-if (temperaturaClima == "si") {
+if (temperaturaClima == "si" || temperaturaClima == "SI") {
 
     alert("Tu consumo de combustible se incrementará. Hasta tu destino consumiras " + consumoAireAc() + " litros de combustible en total")
 
