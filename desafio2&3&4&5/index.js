@@ -88,6 +88,12 @@ if (eleccion == "camion2" || eleccion == "CAMION2" || eleccion == "2") {
 
 }
 
+// ALMACENAMOS LA ELECCION DEL USUARIO
+
+localStorage.setItem("camion", eleccion);
+console.log(localStorage.getItem("camion"));
+console.log(typeof localStorage.getItem("camion"));
+
 // EMPEZAMOS CALCULANDO SIMPLEMENTE DISTANCIA Y VELOCIDIAD PROMEDIO
 
 let destino = document.getElementById("destinoSeleccionado").innerHTML = prompt("¿Cual es el destino de tu viaje");
