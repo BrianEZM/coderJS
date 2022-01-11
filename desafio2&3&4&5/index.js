@@ -1,3 +1,5 @@
+$(document).ready(function () {
+    
 // VAMOS A SIMULAR VIAJES Y SUS DURACIONES SEGUN DIFERENTES VARIABLES (distancia, velocidad, clima, pesos de carga, consumo de combustible)
 
 let reset = function(){
@@ -191,10 +193,48 @@ if (temperaturaClima == "si" || temperaturaClima == "SI") {
 
 document.getElementById("usuario").innerHTML = prompt("¿te ayudamos a definir tu ruta de viaje?");
 
+
 }
 
-let setButton = document.getElementById("setButton");
-setButton.addEventListener("click", reset);
+// let setButton = document.getElementById("setButton");
+// setButton.addEventListener("click", reset);
 
-let resetButton = document.getElementById("resetButton");
-resetButton.addEventListener("click", reset);
+$("#setButton").click(reset);
+
+$("#setButton").click(function(){
+
+    $("#setButton").fadeOut(2000)
+    $("#resetButton").fadeIn(2000)
+
+})
+
+// let resetButton = document.getElementById("resetButton");
+// resetButton.addEventListener("click", reset);
+
+$("#resetButton").click(reset);
+
+$("#resetButton").click(function(){
+
+    $("#resetButton").fadeOut(2000)
+    $("#setButton").fadeIn(2000)
+
+})
+
+// VAMOS A ENVIAR LOS DATOS QUE SOLICITAMOS EN EL FORMULARIO
+
+$("datosPersonales").submit(function(){
+
+    let nombre = $("#nombre").val();
+    let contacto = $("#contacto").val();
+
+    $("#mostrarDatos").text(`Nombre: ${nombre} - Contacto: ${contacto}`);
+
+});
+
+
+
+
+
+
+
+});
