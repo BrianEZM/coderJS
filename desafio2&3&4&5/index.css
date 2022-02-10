@@ -1,11 +1,113 @@
-* {
-    background-color: rgba(153, 151, 161, 0.794);
-    font-family: sans-serif;
+ html {
+    height: 100vp;
+    background-color: #fc991875;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    text-shadow: 1.5px 1px rgba(12, 15, 15, 0.931);
+    color: #35589A;
+    background-image: linear-gradient(to right bottom, #370665, #F14A16 50%, #370665 40%, #F14A16);
 }
 
 
+#body-container {
+    border: 2px solid #FC9918;
+    background-color: #F14A16;
+    padding: 15px;
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 15px;
+    background-image: linear-gradient(to left top, #FC9918, #F14A16);
+    
+} 
+
+.column {
+    flex-direction: column;
+    padding: 1rem;
+    background-color: #FC9918;
+    border: 2px solid #35589A;
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 15px;
+}
+
+#setButton, #resetButton {
+    display: inline-flex;
+    padding: .5rem;
+    box-shadow: 2px 2px #35589A;
+    background-color: #370665;
+    color: #35589A;
+    font-family: inherit;
+    font-size: 20px;
+    font-weight: bolder;
+    text-shadow: none;
+    border-radius: 3px;
+    font-family: 'Roboto', sans-serif;
+    border: none;
+    cursor: pointer;
+    transition: .3s ease all;
+    position: relative;
+    overflow: hidden;
+}
+
+span.buttons {
+    position: relative;
+    z-index: 2;
+    transition: .3s ease all;
+}
+
+#setButton::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: #F14A16;
+    position: absolute;
+    z-index: 1;
+    top: -80px;
+    left: 0;
+    transition: .4s ease-in-out all;
+
+}
+
+#setButton:hover::after {
+    top: 0;
+  
+}
+
+#resetButton::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: #F14A16;
+    position: absolute;
+    z-index: 1;
+    top: 80px;
+    left: 0;
+    transition: .4s ease-in-out all;
+
+}
+
+#resetButton:hover::after {
+    top: 0;
+    padding: 1rem;
+    outline: 0px;
+}
+
 form {
+    
+    padding: 1rem 1rem;
+    border-radius: 15px;
+    font-weight: bolder;
+    font-family: 'Roboto', sans-serif;
+}
 
-    padding: 2rem 2rem;
+form input {
+    border-radius: 15px;
+    background: none;
+}
 
+input.send {
+    border-radius: 15px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
 }

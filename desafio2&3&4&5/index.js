@@ -1,10 +1,10 @@
 $(document).ready(function () {
     
-// VAMOS A SIMULAR VIAJES Y SUS DURACIONES SEGUN DIFERENTES VARIABLES (distancia, velocidad, clima, pesos de carga, consumo de combustible)
+// VAMOS A SIMULAR VIAJES Y SUS DURACIONES SEGUN DIFERENTES VARIABLES (distancia, velocidad, clima, pesos de carga, consumo de combustible), con el fin de RECOMENDAR DESCANSOS PARA UN VIAJE OPTIMO
 
 let reset = function(){
 
-// VAMOS A CREAR ALGUNOS OBJETOS PARA DARTE TANGIBILIDAD AL ASUNTO
+// VAMOS A CREAR ALGUNOS OBJETOS PARA DARLE TANGIBILIDAD AL ASUNTO
 
 const javoDriver = {
     
@@ -17,7 +17,7 @@ const javoDriver = {
         años: "un monton de años de exp",
         carga: "se dice que transportó hasta materiales radioactivos",
         fortaleza: "gran piloto de lluvia",
-        debilidad: "le gusta parar mucho por el camino"
+        debilidad: "le gusta parar mucho por el camino a contemplar"
 
     }
 }
@@ -64,9 +64,9 @@ console.log(cargas);
 
 // VAMOS A INTRODUCIRLE EL SIMULADOR AL USUARIO Y DARLE LA OPCION DE ELEGIR ENTRE DISTINTAS OPCIONES
 
-alert("En este simulador vamos a emular los viajes de Javi en su aventura como camionero");
+alert("En este simulador vamos a emular viajes para recomendar descansos");
 console.log("autonomia" in javineta);
-alert("Por defecto vamos a iniciar el simulador con la Javineta, que tiene las siguientes caracteristicas: " + javineta.tipo + ", " + javineta.color + ", " + javineta.modelo + ", " + javineta.marca + ". Nitro: " + javineta.motor.nitro);
+alert("Por defecto vamos a iniciar el simulador con un camion que tiene las siguientes caracteristicas: " + javineta.tipo + ", " + javineta.color + ", " + javineta.modelo + ", " + javineta.marca + ". Nitro: " + javineta.motor.nitro);
 
 
 alert(`Para tu informacion los caballos de fuerza de los camiones son de: ${fuerzaCv}`);
@@ -191,10 +191,7 @@ if (temperaturaClima == "si" || temperaturaClima == "SI") {
 
 // UNA VEZ CORRIDO EL PROGRAMA VAMOS AGREGAR COMENTARIO DEL USUARIO AL HTML
 
-document.getElementById("usuario").innerHTML = prompt("¿te ayudamos a definir tu ruta de viaje?");
-
-
-}
+document.getElementById("usuario").innerHTML = prompt("¿te ayudamos a definir tu ruta de viaje?");}
 
 // let setButton = document.getElementById("setButton");
 // setButton.addEventListener("click", reset);
@@ -203,8 +200,8 @@ $("#setButton").click(reset);
 
 $("#setButton").click(function(){
 
-    $("#setButton").fadeOut(2000)
-    $("#resetButton").fadeIn(2000)
+    $("#setButton").fadeOut(1500)
+    $("#resetButton").fadeIn(1500)
 
 })
 

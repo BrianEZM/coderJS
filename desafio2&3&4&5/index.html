@@ -5,15 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
-    <title>Javi's Bitch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>Time Trucker</title>
 </head>
-<body>
-    <header>
-        <h1>Calculadora de descansos para viajes largos</h1>
+
+    <div id="body-container">
+        <div class="column">
+    <header class="header1">
+        <h1>Programa para RECOMENDAR descansos para viajes largos</h1>
     </header>
 
     <div id="button1Container">
-        <input type="button" id="setButton" value="INICIAR SIMULADOR">
+        <button id="setButton"><span class="buttons">INICIAR SIMULADOR</span></button>
+        <!-- <input type="button" id="" value="INICIAR SIMULADOR"> -->
     </div>
 
     <body id="body">
@@ -29,7 +35,8 @@
         <br>
         
         <div id="button2Container">
-            <input type="button" id="resetButton" value="REINICIAR SIMULADOR">
+            <button id="resetButton"><span class= "buttons">REINICIAR SIMULADOR</span></button>
+            <!-- <input type="button" id="resetButton" value="REINICIAR SIMULADOR"> -->
         </div>
 
         <form action="#" id="datosPersonales">
@@ -37,7 +44,7 @@
             <input type="text" id="nombre">
             <label for="contacto">¿Como te contactamos? ¿e-mail? ¿celular?: </label>
             <input type="text" id="contacto">
-            <input type="submit" value="Enviar">
+            <input class= "send" type="submit" value="Enviar">
         </form>
 
         <p id="mostrarDatos"> </p>
@@ -51,5 +58,7 @@
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="index.js"></script>
-</body>
+</div>
+</div>
+
 </html>
